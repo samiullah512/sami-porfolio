@@ -139,11 +139,6 @@
         position: relative;
       }
 
-      .section-label::before {
-        content: "// ";
-        opacity: 0.6;
-      }
-
       .section-title {
         font-size: clamp(28px, 4vw, 42px);
         font-weight: 700;
@@ -584,6 +579,7 @@
         font-size: 16px;
         line-height: 1.8;
         margin-bottom: 16px;
+        text-align: justify;
       }
 
       .about-highlights {
@@ -721,6 +717,100 @@
       }
 
       /* ============================================
+           SERVICES / RESEARCH / CERTS EXTRAS
+           ============================================ */
+      .services {
+        background: var(--primary-light);
+      }
+
+      .research {
+        background: var(--primary);
+      }
+
+      .skill-caption {
+        font-size: 12.5px;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+
+      .service-card p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: justify;
+        margin-top: 6px;
+      }
+
+      .service-card .btn {
+        margin-top: 18px;
+      }
+
+      .fiverr-highlight {
+        margin-top: 16px;
+      }
+
+      .review-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .review-placeholder,
+      .review-img {
+        aspect-ratio: 16 / 10;
+        border-radius: var(--radius-md);
+      }
+
+      .review-placeholder {
+        border: 1.5px dashed rgba(255, 255, 255, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: var(--text-dim);
+        font-size: 11px;
+        background: rgba(255, 255, 255, 0.02);
+        text-align: center;
+        padding: 8px;
+      }
+
+      .review-placeholder i {
+        font-size: 20px;
+        opacity: 0.5;
+      }
+
+      .review-img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .cert-thumb {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: var(--radius-sm);
+        flex-shrink: 0;
+        background: var(--secondary);
+      }
+
+      .thesis-image {
+        width: 100%;
+        border-radius: var(--radius-md);
+        margin-top: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: block;
+      }
+
+      .edu-detail a {
+        text-decoration: none;
+      }
+
+      /* ============================================
            PROJECTS SECTION
            ============================================ */
       .projects {
@@ -817,6 +907,7 @@
         line-height: 1.7;
         margin-bottom: 20px;
         flex: 1;
+        text-align: justify;
       }
 
       .project-metrics {
@@ -1184,6 +1275,7 @@
         font-size: 16px;
         line-height: 1.7;
         margin-bottom: 32px;
+        text-align: justify;
       }
 
       .contact-links {
@@ -1437,15 +1529,15 @@
          ============================================ -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
-        <a href="#" class="nav-logo">
-          <span>&lt;</span>Sami<span>/&gt;</span>
-        </a>
+        <a href="#" class="nav-logo">Sami Ullah</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#education">Education</a></li>
+          <li><a href="#research">Research</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <a
@@ -1468,9 +1560,11 @@
       </button>
       <a href="#about" onclick="toggleMobileMenu()">About</a>
       <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+      <a href="#services" onclick="toggleMobileMenu()">Services</a>
       <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
       <a href="#experience" onclick="toggleMobileMenu()">Experience</a>
       <a href="#education" onclick="toggleMobileMenu()">Education</a>
+      <a href="#research" onclick="toggleMobileMenu()">Research</a>
       <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
     </div>
 
@@ -1495,6 +1589,7 @@
         <p class="hero-subtitle">Data Analyst / Statistician / BI Developer</p>
         <p class="hero-location">
           <i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia
+          &nbsp;·&nbsp; <i class="fas fa-flag"></i> Pakistani · Transferable Iqama
           &nbsp;·&nbsp; <i class="fas fa-graduation-cap"></i> M.Phil Statistics
           &nbsp;·&nbsp; <i class="fas fa-briefcase"></i> 3+ Years Experience
         </p>
@@ -1545,7 +1640,7 @@
             <div class="about-image-wrapper">
               <!-- Replace with your photo: assets/images/profile.jpg -->
               <img
-                src="assets/images/Profile.jpg"
+                src="assets/images/profile.jpg"
                 alt="Sami Ullah"
               />
             </div>
@@ -1559,11 +1654,12 @@
               operations teams.
             </p>
             <p>
-              I actively use generative AI tools and prompt engineering to
-              accelerate analysis, write cleaner code, and produce sharper data
-              narratives. I communicate findings clearly to both technical and
-              non-technical audiences, and take ownership of projects from raw
-              data ingestion through to the final deliverable.
+              I use AI coding assistants such as GitHub Copilot in VS Code to
+              speed up scripting and reduce repetitive work, while every
+              statistical result and insight I deliver is manually checked
+              and validated. I communicate findings clearly to both technical
+              and non-technical audiences, and take ownership of projects
+              from raw data ingestion through to the final deliverable.
             </p>
             <div class="about-highlights">
               <div class="highlight-item">
@@ -1580,8 +1676,8 @@
                   <i class="fas fa-brain"></i>
                 </div>
                 <div class="highlight-text">
-                  <h4>AI-Powered Analysis</h4>
-                  <p>Leveraging LLMs for faster insights</p>
+                  <h4>AI-Assisted Productivity</h4>
+                  <p>GitHub Copilot in VS Code for faster, cleaner code</p>
                 </div>
               </div>
               <div class="highlight-item">
@@ -1627,6 +1723,10 @@
               <div class="skill-icon"><i class="fas fa-code"></i></div>
               <h3>Languages & Databases</h3>
             </div>
+            <p class="skill-caption">
+              Used to build ETL pipelines and query datasets across my
+              Fiverr, solar analytics, and SQL portfolio projects.
+            </p>
             <div class="skill-tags">
               <span class="skill-tag">Python</span>
               <span class="skill-tag">R</span>
@@ -1642,6 +1742,11 @@
               <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
               <h3>BI & Visualization</h3>
             </div>
+            <p class="skill-caption">
+              Powers the client-facing dashboards in my Healthcare and
+              Retail Analytics projects, and my Power BI monitoring system
+              at Pleasant Solar.
+            </p>
             <div class="skill-tags">
               <span class="skill-tag">Power BI</span>
               <span class="skill-tag">Tableau</span>
@@ -1659,6 +1764,10 @@
               <div class="skill-icon"><i class="fas fa-microscope"></i></div>
               <h3>Analytics Techniques</h3>
             </div>
+            <p class="skill-caption">
+              Applied end-to-end on every client project — from cleaning
+              raw transaction data to automating recurring reports.
+            </p>
             <div class="skill-tags">
               <span class="skill-tag">EDA</span>
               <span class="skill-tag">ETL</span>
@@ -1674,6 +1783,10 @@
               <div class="skill-icon"><i class="fas fa-robot"></i></div>
               <h3>Machine Learning & AI</h3>
             </div>
+            <p class="skill-caption">
+              Core to my M.Phil research and my time-series forecasting
+              work developing and evaluating models in R and Python.
+            </p>
             <div class="skill-tags">
               <span class="skill-tag">Regression</span>
               <span class="skill-tag">Classification</span>
@@ -1687,12 +1800,15 @@
           <div class="skill-card fade-in">
             <div class="skill-header">
               <div class="skill-icon"><i class="fas fa-bolt"></i></div>
-              <h3>Generative AI & LLMs</h3>
+              <h3>AI-Assisted Development</h3>
             </div>
+            <p class="skill-caption">
+              I primarily use GitHub Copilot in VS Code to speed up coding
+              and reduce repetitive work; other AI tools support idea
+              generation and drafting, with all outputs manually validated.
+            </p>
             <div class="skill-tags">
-              <span class="skill-tag">ChatGPT / GPT-4</span>
               <span class="skill-tag">GitHub Copilot</span>
-              <span class="skill-tag">Claude</span>
               <span class="skill-tag">Prompt Engineering</span>
               <span class="skill-tag">AI-assisted EDA</span>
               <span class="skill-tag">Anomaly Detection</span>
@@ -1703,6 +1819,10 @@
               <div class="skill-icon"><i class="fas fa-tools"></i></div>
               <h3>Platforms & Tools</h3>
             </div>
+            <p class="skill-caption">
+              My day-to-day environment for coding, version control, and
+              statistical software work across every project.
+            </p>
             <div class="skill-tags">
               <span class="skill-tag">SPSS</span>
               <span class="skill-tag">Minitab</span>
@@ -1712,6 +1832,112 @@
               <span class="skill-tag">Google Workspace</span>
             </div>
           </div>
+          <div class="skill-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-handshake"></i></div>
+              <h3>Professional Strengths</h3>
+            </div>
+            <p class="skill-caption">
+              Developed through freelance client work on Fiverr and
+              cross-team collaboration at Pleasant Solar.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Problem-Solving & Adaptability</span>
+              <span class="skill-tag">Cross-Functional Teamwork</span>
+              <span class="skill-tag">Mentoring & Training</span>
+              <span class="skill-tag">Communication</span>
+            </div>
+          </div>
+          <div class="skill-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-language"></i></div>
+              <h3>Languages</h3>
+            </div>
+            <p class="skill-caption">
+              Supports client communication and tutoring across English-
+              and Arabic-speaking audiences in Riyadh and beyond.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">English</span>
+              <span class="skill-tag">Arabic</span>
+              <span class="skill-tag">Urdu</span>
+              <span class="skill-tag">Pashto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">What I Offer</div>
+          <h2 class="section-title">Statistics Tutoring & Academic Support</h2>
+          <p class="section-subtitle">
+            Alongside analytics work, I help students build strong statistics
+            foundations and complete coursework with confidence.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card service-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <h3>Concept Building</h3>
+            </div>
+            <p>
+              One-on-one teaching of core and advanced statistics concepts,
+              built around how each student learns best.
+            </p>
+          </div>
+          <div class="skill-card service-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+              <h3>Assignment & Homework Help</h3>
+            </div>
+            <p>
+              Guided support on statistics assignments, working through
+              methodology and calculations so the concept is actually learned.
+            </p>
+          </div>
+          <div class="skill-card service-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-flask"></i></div>
+              <h3>Research Data Analysis</h3>
+            </div>
+            <p>
+              Support for thesis and research projects — data cleaning,
+              statistical testing, and results interpretation using SPSS,
+              R, Python, and Excel.
+            </p>
+          </div>
+          <div class="skill-card service-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3>Online Tutoring</h3>
+            </div>
+            <p>
+              Flexible online sessions covering statistical software
+              (SPSS, Minitab, R, Excel) alongside the underlying theory.
+            </p>
+          </div>
+          <div class="skill-card service-card fade-in">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fas fa-check-double"></i></div>
+              <h3>Problem Solving & Exam Prep</h3>
+            </div>
+            <p>
+              Practice problems and exam preparation covering probability,
+              regression, hypothesis testing, and statistical inference.
+            </p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Book a Session
+          </a>
         </div>
       </div>
     </section>
@@ -1893,6 +2119,35 @@
                   insights
                 </li>
               </ul>
+              <div class="fiverr-highlight">
+                <!-- Confirm this is your correct Fiverr profile URL -->
+                <a
+                  href="https://www.fiverr.com/samiullah512"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  <i class="fas fa-external-link-alt"></i> View My Fiverr Profile
+                </a>
+                <div class="review-gallery">
+                  <!--
+                    Replace each placeholder below with your own review
+                    screenshot, e.g.:
+                    <img src="assets/images/reviews/review-1.png" alt="Fiverr review 1" class="review-img" />
+                  -->
+                  <div class="review-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>Review Screenshot 1</span>
+                  </div>
+                  <div class="review-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>Review Screenshot 2</span>
+                  </div>
+                  <div class="review-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>Review Screenshot 3</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1950,15 +2205,100 @@
             <div class="edu-icon"><i class="fas fa-university"></i></div>
             <h3>Master of Philosophy (M.Phil)</h3>
             <div class="edu-school">Abdul Wali Khan University, Mardan</div>
-            <div class="edu-detail">Field of Study: Statistics</div>
+            <div class="edu-detail">
+              Field of Study: Statistics · 09/2021 – 10/2024
+            </div>
+            <div class="edu-detail">
+              <a
+                href="https://awkum.edu.pk/"
+                target="_blank"
+                style="color: var(--accent)"
+                >awkum.edu.pk</a
+              >
+            </div>
             <div class="edu-gpa">CGPA: 3.28 / 4.00</div>
           </div>
           <div class="edu-card fade-in">
             <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <h3>Bachelor's in Statistics</h3>
+            <h3>Bachelor's in Statistics (4 Years)</h3>
             <div class="edu-school">University of Malakand</div>
-            <div class="edu-detail">4-Year Program</div>
+            <div class="edu-detail">
+              Field of Study: Statistics · 08/2017 – 09/2021
+            </div>
+            <div class="edu-detail">
+              <a
+                href="https://www.uom.edu.pk/"
+                target="_blank"
+                style="color: var(--accent)"
+                >uom.edu.pk</a
+              >
+            </div>
             <div class="edu-gpa">CGPA: 3.67 / 4.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         RESEARCH SECTION
+         ============================================ -->
+    <section class="section research" id="research">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Academic Work</div>
+          <h2 class="section-title">Research Background</h2>
+          <p class="section-subtitle">
+            Research carried out during my Master's and Bachelor's degrees,
+            plus hands-on time series modeling work.
+          </p>
+        </div>
+        <div class="edu-grid">
+          <div class="edu-card fade-in">
+            <div class="edu-icon"><i class="fas fa-microscope"></i></div>
+            <h3>M.Phil Thesis</h3>
+            <div class="edu-school">
+              A Novel Approach Based on Robust Measures of Scale for Feature
+              Selection in Binary Classification Problems
+            </div>
+            <div class="edu-detail" style="text-align: justify; margin-top: 10px">
+              Developed an innovative feature selection technique using
+              robust scale measures and evaluated its effectiveness on
+              secondary genomic datasets. Algorithms were implemented in R,
+              with Python used for advanced data visualization. Performance
+              was compared against six established methods, achieving
+              superior accuracy and lower error rates.
+            </div>
+            <!-- Replace with your thesis title page: assets/images/thesis-title.jpg -->
+            <img
+              src="assets/images/thesis-title.jpg"
+              alt="M.Phil Thesis Title Page"
+              class="thesis-image"
+            />
+          </div>
+          <div class="edu-card fade-in">
+            <div class="edu-icon"><i class="fas fa-book-open"></i></div>
+            <h3>Bachelor Thesis</h3>
+            <div class="edu-school">
+              Impact of Online Education on Student Academic Performance
+            </div>
+            <div class="edu-detail" style="text-align: justify; margin-top: 10px">
+              Studied the impact of COVID-19 on student CGPA during the
+              transition to online learning. Collected and validated primary
+              data using SPSS, applying descriptive, inferential, and
+              correlational analysis, with findings visualized in Excel and
+              a proposed smart lockdown internet resource management system.
+            </div>
+          </div>
+        </div>
+        <div class="edu-card fade-in" style="margin-top: 24px">
+          <div class="edu-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Time Series Research Experience</h3>
+          <div class="edu-detail" style="text-align: justify">
+            Alongside my thesis work, I have hands-on research experience
+            developing and evaluating time series forecasting models using
+            R and Python packages, comparing model performance and error
+            metrics to identify the most reliable approach for a given
+            dataset.
           </div>
         </div>
       </div>
@@ -1978,45 +2318,99 @@
         </div>
         <div class="certs-grid">
           <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fab fa-google"></i></div>
+            <!-- Replace with your certificate image: assets/images/certs/google-data-analytics.jpg -->
+            <img
+              src="assets/images/certs/google-data-analytics.jpg"
+              alt="Google Professional Data Analytics certificate"
+              class="cert-thumb"
+            />
             <div class="cert-info">
               <h4>Google Professional Data Analytics</h4>
               <p>Google</p>
             </div>
           </div>
           <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fas fa-brain"></i></div>
+            <!-- Replace with your certificate image: assets/images/certs/microsoft-365.jpg -->
+            <img
+              src="assets/images/certs/microsoft-365.jpg"
+              alt="Microsoft 365 certificate"
+              class="cert-thumb"
+            />
             <div class="cert-info">
-              <h4>Machine Learning Specialization</h4>
-              <p>DeepLearning.AI</p>
-            </div>
-          </div>
-          <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
-            <div class="cert-info">
-              <h4>Microsoft 365 Certified</h4>
+              <h4>Microsoft 365</h4>
               <p>Microsoft</p>
             </div>
           </div>
           <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fas fa-table"></i></div>
+            <!-- Replace with your certificate image: assets/images/certs/excel-data-analytics-visualization.jpg -->
+            <img
+              src="assets/images/certs/excel-data-analytics-visualization.jpg"
+              alt="Excel Skills for Data Analytics and Visualization certificate"
+              class="cert-thumb"
+            />
             <div class="cert-info">
-              <h4>Excel Skills for Data Analytics</h4>
-              <p>Macquarie University</p>
+              <h4>Excel Skills for Data Analytics and Visualization</h4>
+              <p>Certificate</p>
             </div>
           </div>
           <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+            <!-- Replace with your certificate image: assets/images/certs/neural-networks-python.jpg -->
+            <img
+              src="assets/images/certs/neural-networks-python.jpg"
+              alt="Training Neural Networks in Python certificate"
+              class="cert-thumb"
+            />
             <div class="cert-info">
-              <h4>Neural Networks in Python</h4>
-              <p>DataCamp</p>
+              <h4>Training Neural Networks in Python</h4>
+              <p>Certificate</p>
             </div>
           </div>
           <div class="cert-card fade-in">
-            <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+            <!-- Replace with your certificate image: assets/images/certs/ml-specialization.jpg -->
+            <img
+              src="assets/images/certs/ml-specialization.jpg"
+              alt="Machine Learning Specialization certificate"
+              class="cert-thumb"
+            />
+            <div class="cert-info">
+              <h4>Machine Learning Specialization</h4>
+              <p>DeepLearning.AI / Stanford</p>
+            </div>
+          </div>
+          <div class="cert-card fade-in">
+            <!-- Replace with your certificate image: assets/images/certs/data-analytics-bi.jpg -->
+            <img
+              src="assets/images/certs/data-analytics-bi.jpg"
+              alt="Data Analytics and Business Intelligence certificate"
+              class="cert-thumb"
+            />
             <div class="cert-info">
               <h4>Data Analytics & Business Intelligence</h4>
-              <p>Professional Certificate</p>
+              <p>Certificate</p>
+            </div>
+          </div>
+          <div class="cert-card fade-in">
+            <!-- Replace with your certificate image: assets/images/certs/intro-r-programming.jpg -->
+            <img
+              src="assets/images/certs/intro-r-programming.jpg"
+              alt="Introduction to R Programming certificate"
+              class="cert-thumb"
+            />
+            <div class="cert-info">
+              <h4>Introduction to R Programming</h4>
+              <p>Certificate</p>
+            </div>
+          </div>
+          <div class="cert-card fade-in">
+            <!-- Replace with your certificate image: assets/images/certs/excel-data-analysis.jpg -->
+            <img
+              src="assets/images/certs/excel-data-analysis.jpg"
+              alt="Learning Excel Data Analysis certificate"
+              class="cert-thumb"
+            />
+            <div class="cert-info">
+              <h4>Learning Excel Data Analysis</h4>
+              <p>Certificate</p>
             </div>
           </div>
         </div>
